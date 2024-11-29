@@ -29,10 +29,10 @@ async function run() {
 
     try {
       const userSpecifiedOrganization = core.getInput('organization');
-      const repository = process.env['GITHUB_REPOSITORY'];
+      const repository = process.env['GITHUB_REPOSITORY_CUSTOM'];
 
       if (!repository || repository.trim().length === 0) {
-        throw new Error(`The repository value was missing from the environment as 'GITHUB_REPOSITORY'`);
+        throw new Error(`The repository value was missing from the environment as 'GITHUB_REPOSITORY_CUSTOM'`);
       }
 
       const repoParts = repository.split('/');
